@@ -1,0 +1,6 @@
+s0.initCam()
+src(s0)
+  .saturate(2)
+  .layer(src(o0).mask(shape(4, 2).scale(0.5, 0.7).scrollX(0.25)).scrollX(0.003))
+  .modulate(o0, 0.01)
+  .out(o0)

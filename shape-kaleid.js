@@ -1,0 +1,13 @@
+shape(4, 0.2, 0.7)
+  .repeat(5, 5)
+  .modulateScale(osc(2, 0.125))
+  .out(o0)
+
+src(o0)
+  .scale(() => 1 + Math.sin(time * 0.001) * 0.005)
+  .rotate(0.1, 0.1)
+  .kaleid(5)
+  .blend(o0, 0.8)
+  .modulate(noise(3), 0.05)
+  .colorama(0.01)
+  .out(o0)

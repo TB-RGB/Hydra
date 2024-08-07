@@ -1,0 +1,7 @@
+shape(4, 0.9)
+  .repeat(10, 5)
+  .modulateScale(osc(8, 0.5))
+  .pixelate(() => Math.sin(time)*20 + 30, () => Math.sin(time)*20 + 30)
+  .scrollX(0.1)
+  .scrollY(0.1)
+  .out()

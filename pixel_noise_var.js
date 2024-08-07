@@ -1,0 +1,7 @@
+osc(10, 0.1, 1.2)
+  .color(0.28, 0.4, 0.9)
+  .diff(osc(20, 0.1, 1).rotate(0.1))
+  .pixelate(20, 20)
+  .modulate(noise(3).modulate(osc(10, 0.1, 1).rotate(0.1)))
+  .colorama(()=>a.fft[0])
+  .out()
