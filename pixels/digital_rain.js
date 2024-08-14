@@ -1,9 +1,10 @@
-shape(3, 0.5)
+shape(6, 0.5)
   .repeat(20, 10)
   .scale(1, () => (Math.sin(time*0.5)*0.5 + 1)*2)
   .scrollY(0.5, 0.1)
   .pixelate(50, 50)
   .color(0, 1, 0.5)
+  .rotate(0.7)
   .out(o0)
 
   osc(10, 0.1, 1.2)

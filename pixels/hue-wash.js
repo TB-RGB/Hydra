@@ -6,9 +6,9 @@ src(o0)
     osc(10, 0.05, 1)
       .hue(() => Math.sin(time*0.4)*0.5)
       .pixelate(20, 20),
-    () => a.fft[3]
+    ()=>a.fft[0]
   )
-  .modulate(noise(0.08), ()=>a.fft[3])
+  .modulateScale(noise(0.08), ()=>a.fft[3])
   .out(o0)
 
 src(o0)

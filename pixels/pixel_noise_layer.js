@@ -15,4 +15,4 @@ src(o2)
   .modulate(osc(10, 0.1, 1).modulateRotate(voronoi(0.1)))
   .out(o3);
 
-render();
+render(o2);
