@@ -1,3 +1,5 @@
+// This is not mine, but very cool, I'll change this to give credit when I find them again, just something I saved for inspo :)
+
 function rnd_btw(min, max) {return fxrand() * (max - min) + min;}
 function rnd_btwexp(min, max) {return fxrand()**2 * (max - min) + min;}
 function rnd_int(min, max) {min = Math.ceil(min);max = Math.floor(max);return Math.floor(fxrand() * (max - min + 1)) + min;}
