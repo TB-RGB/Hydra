@@ -13,8 +13,8 @@ function rnd_int(a, b) {
 }
 
 let dropSpeed = rnd_btw(0.1, 0.5);
-let dropSize = rnd_int(3, 20);
-let oscCol = rnd_btw(1.12, 1.99)
+let dropSize = rnd_int(10, 40);
+let oscCol = rnd_btw(1.12, 1.99);
 let colorIntensity = rnd_btw(0.5, 1);
 
 osc(dropSize, dropSpeed, oscCol)
@@ -23,5 +23,17 @@ osc(dropSize, dropSpeed, oscCol)
   .scrollY(1, 0.1)
   .modulateScale(noise(rnd_btw(1, 5)).pixelate(4, 30), rnd_btw(0.1, 0.5))
   .mult(o0, 0.8)
-  .modulateRotate(noise(0.4))
+  .modulateScrollX(
+    noise(rnd_btw(0.1, 0.5)).modulateRepeatX(
+      voronoi(2).modulateScale(osc(20), 0.05),
+      0.1
+    )
+  )
   .out(o0);
+
+src(o0)
+  .modulateScale(osc(20).modulatePixelate(noise(0.4), 2), 0.2)
+  .modulate(voronoi(1))
+  .out(o1);
+
+render(o1);
